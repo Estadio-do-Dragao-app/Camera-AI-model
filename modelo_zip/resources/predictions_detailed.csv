@@ -1,0 +1,2 @@
+filename,true_count,predicted_count,absolute_error,true_bin
+025.jpg,120,90,30,100-150

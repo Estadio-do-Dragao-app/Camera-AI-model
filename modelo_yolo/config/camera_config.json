@@ -1,0 +1,45 @@
+{
+    "cameras": {
+        "CAM_001": {
+            "name": "Camera de Teste",
+            "model": "model/zip_n_model_quant.onnx",
+            "input_size": [
+                448,
+                448
+            ],
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 3.0,
+                "unit": "meters"
+            },
+            "orientation": {
+                "pan": 0.0,
+                "tilt": -10.0,
+                "roll": 0.0,
+                "unit": "degrees"
+            },
+            "fov": {
+                "horizontal": 70.0,
+                "vertical": 55.0,
+                "unit": "degrees"
+            },
+            "resolution": {
+                "width": 640,
+                "height": 480
+            },
+            "coverage_area": {
+                "x_min": -50.0,
+                "x_max": 50.0,
+                "y_min": 0.0,
+                "y_max": 100.0,
+                "unit": "meters"
+            }
+        }
+    },
+    "system": {
+        "mqtt_broker": "localhost",
+        "mqtt_port": 1883,
+        "publish_interval": 10
+    }
+}

@@ -1,0 +1,28 @@
+services:
+  # 🦟 MQTT BROKER
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: fan-app-mosquitto
+    ports:
+      - "1883:1883" # MQTT
+      - "9001:9001" # WebSockets
+    volumes:
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: unless-stopped
+
+  # 📝 MONITOR DE LOGS (Para ver os dados JSON)
+  monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile.monitor
+    container_name: fan-app-monitor
+    depends_on:
+      - mosquitto
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Rede host pode ser necessária se quisermos que ele aceda ao localhost do PC,
+    # mas como ele depende do mosquitto service, deve usar a rede interna do docker.
+    # Vou usar a rede interna e mudar o script para conectar a "mosquitto" host.
+    # Mas o user pode querer correr localmente...
+    # Para simplificar e garantir que ele vê o broker: "mosquitto" é o hostname na rede default.
+    restart: unless-stopped

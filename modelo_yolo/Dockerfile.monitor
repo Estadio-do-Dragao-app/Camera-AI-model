@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Instalar dependências
+RUN pip install --no-cache-dir paho-mqtt colorama
+
+# Copiar script
+COPY scripts/mqtt_monitor.py .
+
+# Garantir output python sem buffer
+ENV PYTHONUNBUFFERED=1
+
+CMD ["python3", "mqtt_monitor.py"]

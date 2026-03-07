@@ -1,0 +1,13 @@
+[project]
+name = "fan-app"
+version = "0.1.0"
+description = "This is an example on how you can use the zip model"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.4.2",
+    "onnxruntime>=1.24.1",
+    "opencv-python>=4.13.0.92",
+    "typer>=0.9.0",
+]
+
