@@ -1,2 +1,2 @@
-# Modelos de detetação de crowds
+# Modelos de detetação de quantidades de pessoas
 
